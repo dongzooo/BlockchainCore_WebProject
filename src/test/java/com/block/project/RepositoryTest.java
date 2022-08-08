@@ -133,7 +133,7 @@ public class RepositoryTest {
  		Member member= Member.builder().mnum((long)41).build(); 
  		Product product = Product.builder()
            		.member(member)
-                .name("맥북프로")
+                .name("오큘러")
                 .price(1200000)
                 .thumb("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIrnWr3ecAGrHyvDjsxvEp6ELyAdx1K3Is9Q&usqp=CAU")
                 .detail("2022년에 구매 함")
@@ -141,27 +141,27 @@ public class RepositoryTest {
                 .build();
         productRepository.save(product);
         
-        Member member2= Member.builder().mnum((long)42).build(); 
- 		Product product2 = Product.builder()
-           		.member(member2)
-                .name("갤럭시 21")
-                .price(50000)
-                .thumb("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIrnWr3ecAGrHyvDjsxvEp6ELyAdx1K3Is9Q&usqp=CAU")
-                .detail("3번 사용")
-                .achieved(0)
-                .build();
-        productRepository.save(product2);
-        
-        Member member3= Member.builder().mnum((long)43).build(); 
- 		Product product3 = Product.builder()
-           		.member(member3)
-                .name("오큘러스 퀘스트2")
-                .price(200000)
-                .thumb("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIrnWr3ecAGrHyvDjsxvEp6ELyAdx1K3Is9Q&usqp=CAU")
-                .detail("미개봉 급처")
-                .achieved(0)
-                .build();
-        productRepository.save(product3);
+//        Member member2= Member.builder().mnum((long)42).build(); 
+// 		Product product2 = Product.builder()
+//           		.member(member2)
+//                .name("갤럭시 21")
+//                .price(50000)
+//                .thumb("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIrnWr3ecAGrHyvDjsxvEp6ELyAdx1K3Is9Q&usqp=CAU")
+//                .detail("3번 사용")
+//                .achieved(0)
+//                .build();
+//        productRepository.save(product2);
+//        
+//        Member member3= Member.builder().mnum((long)43).build(); 
+// 		Product product3 = Product.builder()
+//           		.member(member3)
+//                .name("오큘러스 퀘스트2")
+//                .price(200000)
+//                .thumb("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIrnWr3ecAGrHyvDjsxvEp6ELyAdx1K3Is9Q&usqp=CAU")
+//                .detail("미개봉 급처")
+//                .achieved(0)
+//                .build();
+//        productRepository.save(product3);
 //        IntStream.rangeClosed(1,40).forEach(i -> {
 //          	int prices = (int)(Math.random() *10000);
 //              Product product = Product.builder()

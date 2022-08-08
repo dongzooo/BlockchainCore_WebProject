@@ -25,7 +25,7 @@ public interface ProductService {
 	public default Product dtoToEntityProduct(ProductDTO dto) {
 		
 		Product p = Product.builder()
-				.member(Member.builder().mnum(5L).build())
+				.member(Member.builder().mnum(41L).build())
 				.name(dto.getName())
 				.price(dto.getPrice())
 				.thumb(dto.getThumb())

@@ -16,6 +16,7 @@ import com.block.project.dto.PageResponseDTO;
 import com.block.project.dto.ProductDTO;
 import com.block.project.dto.TradeDTO;
 import com.block.project.model.Product;
+import com.block.project.model.Trade;
 import com.block.project.repository.MemberRepository;
 import com.block.project.repository.ProductRepository;
 
@@ -43,8 +44,12 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public Long registerProduct(ProductDTO dto) {
-		// TODO Auto-generated method stub
-		return null;
+		Product product = dtoToEntityProduct(dto);
+		//entity 유효성 검사
+//		validate(trade);
+		//DB저장
+		productRepository.save(product);
+		return product.getPnum();
 	}
 
 
