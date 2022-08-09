@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.block.project.dto.PageRequestDTO;
@@ -50,10 +51,9 @@ public class ProductController {
 		}
 		
 		@PostMapping("/productUpload")
-		public String createTrade(ProductDTO dto, RedirectAttributes redirectAttributes) {
+		public String createTrade(ProductDTO dto,RedirectAttributes redirectAttributes) {
 			log.info("거래 저장 중.." + dto);
 //			Date date = new Date();
-//			dto.setTNum(dto.getTNum());
 			dto.setAchieved(0);
 //			dto.setDate(date);
 			Long tNum = productService.registerProduct(dto);

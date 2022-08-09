@@ -5,15 +5,15 @@
   <th:block th:fragment="content">
     <h1 class="mt-4">상품 등록</h1>
 
-    <form th:action="@{/productUpload}" th:method="post">
+    <form th:action="@{/productUpload}" th:method="post" enctype="multipart/form-data">
     
       <div class="form-group">
-      <!-- -->
+      <!-- 
         <label>pNum</label>
         <input type="text" class="form-control" name="pnum" placeholder="Enter Title">
       </div>
      
-      
+      -->
       <div class="form-group">
         <label>name</label>
         <input type="text" class="form-control" name="name" placeholder="Enter Title">
@@ -33,10 +33,12 @@
         <input type="text" class="form-control" name="detail" placeholder="Enter Title">
       </div>
       
+      <!--
       <div class="achieved">
         <label>achieved</label>
         <input type="text" class="form-control" name="achieved" placeholder="Enter Title">
       </div>
+      -->
 
       
       <!--

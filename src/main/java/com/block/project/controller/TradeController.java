@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,15 +39,18 @@ public class TradeController {
 		
 
 		@PostMapping("/board/trade")
-		public String createTrade(TradeDTO dto, RedirectAttributes redirectAttributes) {
-			log.info("거래 저장 중.." + dto);
+		public String createTrade(TradeDTO dto, HttpSession httpSession,RedirectAttributes redirectAttributes) {
 			Date date = new Date();
 //			dto.setTNum(dto.getTNum());
+			dto.setPNum(1L);
 			dto.setConfirm(0);
 			dto.setDate(date);
-			Long tNum = tradeService.createTrade(dto);
+			log.info("거래 저장 중.." + dto);
+			System.out.println("+++++++"+dto);
+//			Long tNum = tradeService.buyConfirm(dto);
+			tradeService.buyConfirm(dto);
 			//View에 데이터 전달
-			redirectAttributes.addFlashAttribute("msg", tNum + " 삽입");
+			redirectAttributes.addFlashAttribute("msg 삽입");
 			
 			return "redirect:/board/trade";
 		}

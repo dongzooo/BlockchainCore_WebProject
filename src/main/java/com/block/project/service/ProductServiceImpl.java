@@ -5,11 +5,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.block.project.dto.PageRequestDTO;
 import com.block.project.dto.PageResponseDTO;
@@ -42,9 +44,17 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 
+	@Value("${com.block.upload.path}")
+    static String fileDir;
+	
 	@Override
 	public Long registerProduct(ProductDTO dto) {
+//		MultipartFile files;
+//		String savePath =fileDir + dto.getPnum()+dto.getName();
 		Product product = dtoToEntityProduct(dto);
+//		files.transferTo(product.getThumb());
+		
+		
 		//entity 유효성 검사
 //		validate(trade);
 		//DB저장

@@ -3,6 +3,7 @@ package com.block.project.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 import com.block.project.dto.PageRequestDTO;
 import com.block.project.dto.PageResponseDTO;
@@ -12,7 +13,9 @@ import com.block.project.model.Member;
 import com.block.project.model.Product;
 import com.block.project.repository.MemberRepository;
 
+
 public interface ProductService {
+
 
 	//데이터 삽입
 	public Long registerProduct(ProductDTO dto);

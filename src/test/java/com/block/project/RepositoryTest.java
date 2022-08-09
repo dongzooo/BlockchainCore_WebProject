@@ -1,11 +1,16 @@
 package com.block.project;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.IntStream;
 
 import javax.transaction.Transactional;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,9 +29,11 @@ import com.block.project.repository.ReplyRepository;
 import com.block.project.repository.TradeRepository;
 import com.block.project.repository.WalletRepository;
 import com.block.project.service.ProductService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.block.project.dto.PageRequestDTO;
 import com.block.project.dto.PageResponseDTO;
 import com.block.project.dto.ProductDTO;
+import com.block.project.dto.TradeDTO;
 import com.block.project.model.Member;
 import com.block.project.model.MemberAuth;
 import com.block.project.model.Product;
@@ -117,8 +124,16 @@ public class RepositoryTest {
             });
     }
 	
+    @Test
+    public void jsonTransfer() {
+    	 Map<String, Object> map = new HashMap<>();
 
-    
+         map.put("key1", "value1");
+         map.put("key2", "value2");
+  
+        JSONObject json =  new JSONObject(map);
+         System.out.printf( "JSON: %s", json);
+    }
     
     
     
@@ -126,42 +141,42 @@ public class RepositoryTest {
   	@Autowired
   	private ProductRepository productRepository;
   	
-  	@Test
-  	@Transactional
-  	@Commit
+//  	@Test
+//  	@Transactional
+//  	@Commit
     public void insertProduct() {
  		Member member= Member.builder().mnum((long)41).build(); 
  		Product product = Product.builder()
            		.member(member)
-                .name("오큘러")
+                .name("맥북 프로")
                 .price(1200000)
-                .thumb("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIrnWr3ecAGrHyvDjsxvEp6ELyAdx1K3Is9Q&usqp=CAU")
+                .thumb("/image/1.jpg")
                 .detail("2022년에 구매 함")
                 .achieved(0)
                 .build();
         productRepository.save(product);
         
-//        Member member2= Member.builder().mnum((long)42).build(); 
-// 		Product product2 = Product.builder()
-//           		.member(member2)
-//                .name("갤럭시 21")
-//                .price(50000)
-//                .thumb("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIrnWr3ecAGrHyvDjsxvEp6ELyAdx1K3Is9Q&usqp=CAU")
-//                .detail("3번 사용")
-//                .achieved(0)
-//                .build();
-//        productRepository.save(product2);
-//        
-//        Member member3= Member.builder().mnum((long)43).build(); 
-// 		Product product3 = Product.builder()
-//           		.member(member3)
-//                .name("오큘러스 퀘스트2")
-//                .price(200000)
-//                .thumb("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIrnWr3ecAGrHyvDjsxvEp6ELyAdx1K3Is9Q&usqp=CAU")
-//                .detail("미개봉 급처")
-//                .achieved(0)
-//                .build();
-//        productRepository.save(product3);
+        Member member2= Member.builder().mnum((long)42).build(); 
+ 		Product product2 = Product.builder()
+           		.member(member2)
+                .name("갤럭시 21")
+                .price(50000)
+                .thumb("/image/2.jpg")
+                .detail("3번 사용")
+                .achieved(0)
+                .build();
+        productRepository.save(product2);
+        
+        Member member3= Member.builder().mnum((long)43).build(); 
+ 		Product product3 = Product.builder()
+           		.member(member3)
+                .name("오큘러스 퀘스트2")
+                .price(200000)
+                .thumb("/image/3.jpg")
+                .detail("미개봉 급처")
+                .achieved(0)
+                .build();
+        productRepository.save(product3);
 //        IntStream.rangeClosed(1,40).forEach(i -> {
 //          	int prices = (int)(Math.random() *10000);
 //              Product product = Product.builder()

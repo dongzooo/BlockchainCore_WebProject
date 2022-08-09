@@ -28,7 +28,7 @@ public class TradeDTO {
 //	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	private Date date;
 	
-    private Product pNum;
+    private Long pNum;
     
     private String txid;
     
