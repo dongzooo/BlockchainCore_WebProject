@@ -2,6 +2,7 @@ package com.block.project.service;
 
 import java.util.List;
 
+import com.block.project.dto.RespMkBlkDTO;
 import com.block.project.dto.TradeDTO;
 import com.block.project.model.Product;
 import com.block.project.model.Trade;
@@ -12,7 +13,7 @@ public interface TradeService {
 	//거래내역 생성
 	public Long createTrade(TradeDTO dto);
 	
-	public void buyConfirm(TradeDTO dto);
+	public RespMkBlkDTO buyConfirm(TradeDTO dto);
 	
 	//DTO를 Entity로 변환해주는 메서드
 	default Trade dtoToEntity(TradeDTO dto) {
@@ -28,6 +29,7 @@ public interface TradeService {
 		
 		return trade;
 	}
+	
 	
 	//Entity를 DTO로 변환해주는 메서드
 	public static TradeDTO entityToDTO(Product product, Trade trade) {

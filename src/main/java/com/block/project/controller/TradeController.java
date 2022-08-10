@@ -48,12 +48,40 @@ public class TradeController {
 			log.info("거래 저장 중.." + dto);
 			System.out.println("+++++++"+dto);
 //			Long tNum = tradeService.buyConfirm(dto);
-			tradeService.buyConfirm(dto);
+			tradeService.createTrade(dto);
 			//View에 데이터 전달
 			redirectAttributes.addFlashAttribute("msg 삽입");
 			
 			return "redirect:/board/trade";
 		}
+		
+		
+		
+		
+		   //구매확정버튼 클릭 시 거래를 DB에 저정 처리할 메서드
+			@GetMapping("/board/tradeConfirm")
+//			@GetMapping("/main")
+			public void createTradeConfirm() {
+				log.info("거래저장으로 이동");
+			}		
+			
+
+			@PostMapping("/board/tradeConfirm")
+			public String createTradeConfirm(TradeDTO dto, HttpSession httpSession,RedirectAttributes redirectAttributes) {
+				Date date = new Date();
+//				dto.setTNum(dto.getTNum());
+				dto.setPNum(1L);
+				dto.setConfirm(0);
+				dto.setDate(date);
+				log.info("거래 저장 중.." + dto);
+				System.out.println("+++++++"+dto);
+//				Long tNum = tradeService.buyConfirm(dto);
+				tradeService.buyConfirm(dto);
+				//View에 데이터 전달
+				redirectAttributes.addFlashAttribute("msg 삽입");
+				
+				return "redirect:/board/trade";
+			}
 		
 		
 		

@@ -124,7 +124,7 @@ public class RepositoryTest {
             });
     }
 	
-    @Test
+//    @Test
     public void jsonTransfer() {
     	 Map<String, Object> map = new HashMap<>();
 
