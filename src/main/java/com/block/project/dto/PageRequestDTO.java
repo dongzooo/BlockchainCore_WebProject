@@ -19,10 +19,10 @@ public class PageRequestDTO {
 	private int size;
 	
 	// 검색 항목
-//	private String type;
+	private String type;
 	
 	// 검색할 데이터 키워드
-//	private String keyword;
+	private String keyword;
 	
 	// 생성자
 	public PageRequestDTO() {

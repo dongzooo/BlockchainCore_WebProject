@@ -1,5 +1,6 @@
 package com.block.project;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -229,11 +230,11 @@ public class RepositoryTest {
 	public void insertTrade() {
 		int price = (int)(Math.random() *100000);
 		Product product= Product.builder().pnum((long)89).build(); 
-		Date date = new Date();
+//		Date date = new Date();
 	    Trade trade = Trade.builder()
-	    		.bWallet("w295afnjd2mcdk42")
-	    		.sWallet("w461afnjd2mcdk42")
-	    		.date(date)
+	    		.bwallet("w295afnjd2mcdk42")
+	    		.swallet("w461afnjd2mcdk42")
+	    		.date(LocalDateTime.now())
 	    		.product(product)
 	    		.txid(""+product.getPnum()*price)
 	    		.total((long)price)

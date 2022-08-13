@@ -33,12 +33,12 @@ import lombok.extern.log4j.Log4j2;
 public class ProductController {
 	
 	private final ProductService productService;
-	
 	   //메인함수
 		@GetMapping({"/","/main"})
 		public String productList(PageRequestDTO pageRequestDTO, Model model) {
 			log.info("메인화면 이동");
 			
+//			System.out.println("1111111111111"+productService.getList(pageRequestDTO));
 			model.addAttribute("result", productService.getList(pageRequestDTO));
 			
 			return "/main";

@@ -1,5 +1,6 @@
 package com.block.project.dto;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -19,16 +20,16 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TradeDTO {
-	private Long tNum;
+	private Long tnum;
 	
-    private String bWallet;
+    private String bwallet;
 	
-	private String sWallet;
+	private String swallet;
 	
 //	@DateTimeFormat(pattern = "yyyy-mm-dd")
-	private Date date;
+	private LocalDateTime date;
 	
-    private Long pNum;
+    private Long pnum;
     
     private String txid;
     

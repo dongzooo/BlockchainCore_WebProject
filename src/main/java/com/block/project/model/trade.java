@@ -1,5 +1,6 @@
 package com.block.project.model;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -32,17 +33,17 @@ public class Trade  {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "tnum")
-    private Long tNum;
+    private Long tnum;
 	
 	@Column(name = "bwallet", nullable=false)
-    private String bWallet;
+    private String bwallet;
 	
 	@Column(name = "swallet", nullable=false)
-	private String sWallet;
+	private String swallet;
 	
 //	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	@Column(name = "date", nullable=false)
-	private Date date;
+	private LocalDateTime date;
 	
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pnum", nullable=false)

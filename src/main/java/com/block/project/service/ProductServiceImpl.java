@@ -31,7 +31,6 @@ public class ProductServiceImpl implements ProductService {
 	private final ProductRepository productRepository;
 	private final MemberRepository memberRepository;
 	
-	
 	@Override
 	public PageResponseDTO<ProductDTO, Product> getList(PageRequestDTO requestDTO) {
 		Sort sort = Sort.by("pnum").descending();

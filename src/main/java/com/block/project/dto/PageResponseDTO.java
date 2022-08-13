@@ -53,7 +53,7 @@ public class PageResponseDTO <DTO, EN>  {
 	
 	public PageResponseDTO(Page<EN> result, Function<EN,DTO> fn) {
 		dtoList = result.stream().map(fn).collect(Collectors.toList());
-//		totalPage = result.getTotalPages();
+		totalPage = result.getTotalPages();
 		
 		makePageList(result.getPageable());
 	}
