@@ -44,6 +44,15 @@ public class ProductController {
 			return "/main";
 		}
 		
+		   //메인함수
+			@GetMapping({"/about"})
+			public void about( Model model) {
+				log.info("회사소개 화면 이동");
+				
+				
+			}
+		
+		
 		@GetMapping({"/productUpload"})
 		public void productUpload() {
 			log.info("상품저장으로 이동");

@@ -22,12 +22,12 @@
 		
 		
 		<table class="table tale-striped" 
-		style="width : 1400px; margin-left:auto; margin-right:auto;"> 
+		style="width : 1150px; margin-left:auto; margin-right:auto;"> 
 			<thead>
-				<tr>
+				<tr style="font-size : 17px;">
 					<!-- <th>블록 아이디</th> -->
-					<th>트랜잭션 아이디</th>
-					<th>구매자</th>
+					<th >트랜잭션 아이디</th>
+					<th >구매자</th>
 					<th>판매자</th>
 					<th>가격</th>
 					<th>거래시각</th>
@@ -35,7 +35,7 @@
 				</tr>
 			</thead>
 			
-			<tr th:each="dto:${result.dtoList}">
+			<tr th:each="dto:${result.dtoList}" style="font-size: 14px;">
 			
 			
 			
@@ -170,9 +170,10 @@
          .tc {
             text-align : center;
          }
-         div , p, h4, b{
+         div , p, h4, b{ 
             text-align : center;
          }
+         /*모달창 설정*/
          .modal{
 		  position: fixed;
 		  top: 50%;
@@ -184,10 +185,12 @@
 			background-color: #99ccff;
 			width: 350px;
 		}
+		/*이미지 */
 		img.barcode { display : block;
                  margin : auto;
          }
-         button{
+        /*버튼디자인*/ 
+        button{
 			background-color: white;
 			border-color :#6667AB;
 	
@@ -196,9 +199,15 @@
 			background-color: #481677;
 			
 		}
+		/*
+		button.comfirmBtn:hover{
+			background-color: white;
+			
+		}
+		*/
         a.aGet{
 			text-decoration: none;	
-			color : #6667AB;
+			color : black;
 			font-weight: bold;
 			
 		}
@@ -208,6 +217,14 @@
 			font-weight: bold;
 			
 		}
+		/*
+		a.buyConfirm:hover{
+			text-decoration: none;	
+			color : #481677;
+			font-weight: bold;
+			
+		}
+		*/
 
 		
       </style>
