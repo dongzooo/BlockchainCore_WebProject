@@ -23,6 +23,9 @@ public interface TradeService {
 	//블록조회
 	GetBlkDTO getBlock(String txid);
 	
+	//tradeInformation
+	public 
+	
 	//DTO를 Entity로 변환해주는 메서드
 	default Trade dtoToEntity(TradeDTO dto) {
 		//프론트 완성시 productDTO를 받아서 아래 변수에 대입한다.				

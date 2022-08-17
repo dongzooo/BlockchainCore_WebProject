@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{/layout/header::setContent(~{this::content})}">
+	<th:block th:fragment="content">
+		</th:block>
+</th:block>
+
+
+  <div class='inner-div'>
+  <br>
+	<h4>구매 정보를 확인해주세요!</h4>
+	<br><br>
+	<table style ='text-align :justify; width:430px; height: 200px; margin-left:auto; margin-right:auto;'> 
+			<tr style="font-size : 17px; text-align: center; border-bottom: solid; border-bottom-color: #481677">
+				<th >상품 사진</th>
+				<th style="width: 210px;">상품 정보</th>
+			</tr>
+			
+			<tr>
+				<td rowspan="3" style="text-align: center;"> <img src="파일명" width="205px" height="150px"> </td>
+				<td>상품 이름 :  </td>
+			</tr>
+			
+			<tr>
+				<td>상품 가격 :   </td>
+			</tr>
+			
+			<tr>
+				<td>지갑 잔액 :   </td>
+			</tr>
+			<tr>
+				<td> &nbsp</td>
+				<td>&nbsp</td>
+			</tr>
+			
+			<tr style= "text-align: center;">
+				<td> <button class="goCharge" href='' > <a  href=''>코인 충전</a> </button> </td>
+				<td> <button class="gobuyConfirm" href='' > <a href=''> 구매 확정</a></td>
+			</tr>
+	</table>
+	
+	<br><br><br><br><br><br>
+</div>
+</div>
+
+
+<th:block th:replace="~{/layout/footer::setContent(~{this::content})}">
+	<th:block th:fragment="content">
+	</th:block>
+</th:block>
+
+<style>
+
+/*버튼디자인*/ 
+        button{
+			color: black;
+			width: 120px;
+			height: 35px;
+			background-color: #481677;
+			border-color :white;
+			border-radius: 10px;
+	
+			}
+		
+		a{
+			text-decoration: none;	
+			color : white;
+			font-weight: bold;
+			font-size: 15px;
+		}
+		
+		button :active{
+			box-shadow: 0 0 #74a3b0; 
+			background-color: #709CA8;
+			}
+		
+p.subtitle{
+	font-weight: 500;
+	font-size:18px;
+}
+.outer-div {
+	
+  width : 600px;
+  margin: auto;
+}
+
+.inner-div {
+	text-align: center;
+  width : 600px;
+  margin: auto;
+}
+</style>

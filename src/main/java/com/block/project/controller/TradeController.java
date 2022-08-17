@@ -25,6 +25,7 @@ import com.block.project.dto.TradeDTO;
 import com.block.project.model.Product;
 import com.block.project.model.Trade;
 import com.block.project.repository.TradeRepository;
+import com.block.project.service.ProductService;
 import com.block.project.service.TradeService;
 
 import lombok.RequiredArgsConstructor;
@@ -38,6 +39,16 @@ public class TradeController {
 	
 	private final TradeService tradeService;
 	private final TradeRepository tradeRepository;
+	private final ProductService productService;
+	
+
+	@GetMapping("/myPage/tradeInformation")
+	public void getTradeInformation(PageRequestDTO pageRequestDTO, Model model) {
+		   log.info("목록 보기.......");
+		   model.addAttribute("presult", productService.getList(pageRequestDTO));
+
+//		   return "redirect:/myPage/tradeInformation";
+	}	
 	
 	   //tradeComfir, test데이터 생성용 페이지
 		@GetMapping("/myPage/trade")
@@ -62,7 +73,6 @@ public class TradeController {
 			
 			return "redirect:/myPage/trade";
 		}
-		
 		
 		
 		
